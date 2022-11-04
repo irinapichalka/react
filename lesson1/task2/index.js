@@ -8,7 +8,7 @@ const greetingElem = React.createElement(
   React.createElement(
     'div',
     { className: 'greeting__text' },
-    "I'm, learning React"
+    "I'm learning React"
   )
 );
 
