@@ -6,12 +6,10 @@ function Profile(props) {
   return (
     <>
       <div className='profile__name'>
-        {`${props.user.firstName} ${props.user.lastName}`}
+        {`${props.firstName} ${props.lastName}`}
       </div>
       <div className='profile__birth'>
-        {`Was born ${formatDate(props.user.birthDate)} in ${
-          props.user.birthPlace
-        }`}
+        {`Was born ${formatDate(props.birthDate)} in ${props.birthPlace}`}
       </div>
     </>
   );
