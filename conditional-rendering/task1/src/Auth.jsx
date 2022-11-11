@@ -1,12 +1,14 @@
 import React from 'react';
 import Greeting from './Greeting';
+import Login from './Login';
+import Logout from './Logout';
 
 class Auth extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      isLoggedIn: false,
+      isLoggedIn: true,
     };
   }
 
@@ -26,17 +28,9 @@ class Auth extends React.Component {
     let button;
 
     if (this.state.isLoggedIn) {
-      button = (
-        <button className='btn logout' onClick={this.handleLogout}>
-          Logout
-        </button>
-      );
+      button = <Logout onLogout={this.handleLogout} />;
     } else {
-      button = (
-        <button className='btn login' onClick={this.handleLogin}>
-          Login
-        </button>
-      );
+      button = <Login onLogin={this.handleLogin} />;
     }
     return (
       <div className='panel'>
