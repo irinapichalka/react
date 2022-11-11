@@ -13,7 +13,7 @@ class ColorPicker extends React.Component {
       text: color,
     });
   };
-  hideName = (color) => {
+  hideName = () => {
     this.setState({
       text: '',
     });
@@ -22,7 +22,7 @@ class ColorPicker extends React.Component {
   render() {
     return (
       <div>
-        <div class='picker__title'>{this.state.text}</div>
+        <div className='picker__title'>{this.state.text}</div>
         <div>
           <button
             className='picker__button picker__button_coral'
