@@ -8,7 +8,7 @@ class Auth extends React.Component {
     super(props);
 
     this.state = {
-      isLoggedIn: true,
+      isLoggedIn: false,
     };
   }
 
