@@ -9,14 +9,19 @@ class Auth extends React.Component {
 
     this.state = {
       isLoggedIn: false,
+      showSpinner: false,
     };
   }
 
   handleLogin = () => {
+    this.setState({
+      showSpinner: true,
+    });
     setTimeout(
       () =>
         this.setState({
           isLoggedIn: true,
+          showSpinner: false,
         }),
       2000
     );
@@ -31,15 +36,19 @@ class Auth extends React.Component {
   render() {
     const html = this.state.isLoggedIn ? (
       <>
-        <Spinner size={20} />
-        <Logout onLogout={this.handleLogout} />
+        <Logout
+          onLogout={this.handleLogout}
+          onShowSpinner={this.state.showSpinner}
+        />
       </>
     ) : (
       <>
         <Login onLogin={this.handleLogin} />
       </>
     );
-    return html;
+
+    if (this.state.showSpinner) return <Spinner size={10} />;
+    else return html;
   }
 }
 
