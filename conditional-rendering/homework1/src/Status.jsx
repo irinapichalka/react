@@ -7,15 +7,9 @@ class Status extends React.Component {
     super(props);
 
     this.state = {
-      isOnline: false,
+      isOnline: props.isOnline,
     };
   }
-
-  changeStatus = () => {
-    this.setState({
-      isOnline: true,
-    });
-  };
 
   render() {
     let html;
@@ -23,7 +17,7 @@ class Status extends React.Component {
     if (this.state.isOnline) {
       html = <Online />;
     } else {
-      html = <Offline isOnline={this.changeStatus} />;
+      html = <Offline />;
     }
     return <div className='status'>{html}</div>;
   }
