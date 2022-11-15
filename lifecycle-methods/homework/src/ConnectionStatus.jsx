@@ -11,7 +11,7 @@ class ConnectionStatus extends React.Component {
     this.setState({
       isOnline: window.navigator.onLine,
     });
-    if (this.state.status) {
+    if (this.state.isOnline) {
       window.addEventListener('online', this.onOnline);
     } else window.addEventListener('offline', this.onOffline);
   }
