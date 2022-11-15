@@ -3,7 +3,7 @@ import React from 'react';
 class ConnectionStatus extends React.Component {
   state = {
     isOnline: true,
-    text: 'Online',
+    text: 'online',
   };
 
   componentDidMount() {
@@ -24,7 +24,7 @@ class ConnectionStatus extends React.Component {
   onOnline = () => {
     this.setState({
       isOnline: true,
-      text: 'Online',
+      text: 'online',
     });
     const el = document.querySelector('.status');
     el.classList.add('status_offline');
@@ -33,7 +33,7 @@ class ConnectionStatus extends React.Component {
   onOffline = () => {
     this.setState({
       isOnline: false,
-      text: 'Offline',
+      text: 'offline',
     });
   };
 
