@@ -9,7 +9,7 @@ class ConectionStatus extends React.Component {
   componentDidMount() {
     console.log(this.state.isOnline);
     this.setState({
-      status: window.navigator.onLine,
+      isOnline: window.navigator.onLine,
     });
     if (this.state.status) {
       window.addEventListener('online', this.onOnline);
@@ -35,13 +35,16 @@ class ConectionStatus extends React.Component {
       isOnline: false,
       text: 'Offline',
     });
-    const el = document.querySelector('.status');
-    el.classList.remove('status_offline');
   };
 
   render() {
-    console.log(this.state.isOnline);
-    return <div className='status'>{this.state.text}</div>;
+    const html = this.state.isOnline ? (
+      <div className='status'>{this.state.text}</div>
+    ) : (
+      <div className='status status_offline'>{this.state.text}</div>
+    );
+
+    return html;
   }
 }
 
