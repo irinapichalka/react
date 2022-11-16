@@ -7,31 +7,38 @@ class UsersList extends React.Component {
     super(props);
 
     this.state = {
-      users: props.users,
+      users: this.props.users,
       text: '',
     };
   }
 
   handleChange = (event) => {
     const { value } = event.target;
+
+    if (value === '') {
+      this.setState({
+        users: this.props.users,
+        text: '',
+      });
+    }
     const newUsers = this.props.users.filter((user) => {
-      console.log(value);
-      console.log(user.name);
       return (
         user.name.toUpperCase() === value.toUpperCase() || user.age === value
       );
     });
 
-    console.log(newUsers);
     if (newUsers.length !== 0) {
       this.setState({
         users: newUsers,
+      });
+    } else {
+      this.setState({
+        users: [],
       });
     }
 
     this.setState({
       text: value,
-      //users: this.props.users,
     });
   };
 
