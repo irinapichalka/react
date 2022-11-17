@@ -22,22 +22,15 @@ class UsersList extends React.Component {
   };
 
   render() {
-    let htmlForUsers = [];
+    const { users } = this.props;
+    const { text } = this.state;
+    const usersToDisplay = users.filter(({ name }) =>
+      name.toLowerCase().includes(text)
+    );
 
-    if (this.state.text === '') {
-      htmlForUsers = this.props.users.map((user) => (
-        <User name={user.name} age={user.age} key={user.id} />
-      ));
-    } else {
-      htmlForUsers = this.props.users
-        .filter((user) => {
-          return (
-            user.name.toUpperCase() === this.state.text.toUpperCase() ||
-            user.age === this.state.text
-          );
-        })
-        .map((user) => <User name={user.name} age={user.age} key={user.id} />);
-    }
+    const htmlForUsers = usersToDisplay.map((user) => (
+      <User name={user.name} age={user.age} key={user.id} />
+    ));
 
     return (
       <div>
