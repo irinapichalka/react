@@ -22,9 +22,13 @@ class UserForm extends React.Component {
     });
   };
 
+  formSubmit = (event) => {
+    event.preventDefault();
+  };
+
   render() {
     return (
-      <form className='login-form' onSubmit={this.props.onSubmit(this.state)}>
+      <form className='login-form' onSubmit={this.formSubmit}>
         <h1 className='form-title'>Profile</h1>
         <div className='form-control'>
           <label className='form-label' htmlFor='name'>
@@ -79,7 +83,11 @@ class UserForm extends React.Component {
             onChange={this.handleChange}
           />
         </div>
-        <button className='submit-button' type='submit'>
+        <button
+          className='submit-button'
+          type='submit'
+          onSubmit={this.props.onSubmit(this.state)}
+        >
           Submit
         </button>
       </form>
