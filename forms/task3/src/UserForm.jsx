@@ -3,32 +3,15 @@ import React from 'react';
 class UserForm extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      name: '',
-      student: '',
-      occupation: '',
-      about: '',
-    };
   }
-
-  handleChange = (event) => {
-    const { name, value, checked, type } = event.target;
-
-    const val = type === 'checkbox' ? checked : value;
-
-    this.setState({
-      [name]: val,
-    });
-  };
-
-  setRef = (node) => {
-    this.formRef = node;
-  };
 
   onSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit(this.formRef);
+  };
+
+  setRef = (node) => {
+    this.formRef = node;
   };
 
   render() {
