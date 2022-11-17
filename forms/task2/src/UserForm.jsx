@@ -7,7 +7,7 @@ class UserForm extends React.Component {
     this.state = {
       name: '',
       student: '',
-      ocupation: '',
+      occupation: '',
       about: '',
     };
   }
@@ -64,7 +64,7 @@ class UserForm extends React.Component {
           <select
             name='occupation'
             className='form-input'
-            value={this.state.ocupation}
+            value={this.state.occupation}
             onChange={this.handleChange}
           >
             <option value='london'>London</option>
