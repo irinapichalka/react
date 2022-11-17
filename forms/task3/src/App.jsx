@@ -3,11 +3,7 @@ import UserForm from './UserForm';
 
 const App = () => {
   const createUser = (userData) => {
-    const formData = [...new FormData(userData)].reduce(
-      (acc, [name, value]) => ({ ...acc, [name]: value }),
-      {}
-    );
-    console.log(formData);
+    console.log(userData);
   };
   return <UserForm onSubmit={createUser} />;
 };
