@@ -4,14 +4,13 @@ class UserForm extends React.Component {
   constructor(props) {
     super(props);
   }
+  setRef = (node) => {
+    this.formRef = node;
+  };
 
   onSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit(this.formRef);
-  };
-
-  setRef = (node) => {
-    this.formRef = node;
   };
 
   render() {
