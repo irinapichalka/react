@@ -7,7 +7,7 @@ class UserForm extends React.Component {
     this.state = {
       name: '',
       student: '',
-      ocupation: '',
+      occupation: '',
       about: '',
     };
   }
@@ -26,13 +26,14 @@ class UserForm extends React.Component {
     this.formRef = node;
   };
 
+  onSubmit = (event) => {
+    event.preventDefault();
+    this.props.onSubmit(this.formRef);
+  };
+
   render() {
     return (
-      <form
-        ref={this.setRef}
-        className='login-form'
-        onSubmit={this.props.onSubmit(this.formRef)}
-      >
+      <form ref={this.setRef} className='login-form' onSubmit={this.onSubmit}>
         <h1 className='form-title'>Profile</h1>
         <div className='form-control'>
           <label className='form-label' htmlFor='name'>
