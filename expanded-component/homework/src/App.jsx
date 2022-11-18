@@ -3,18 +3,18 @@ import Expand from './Expand';
 
 class App extends React.Component {
   state = {
-    isIconDown: true,
+    toShow: false,
   };
 
   onChangeState = () => {
-    console.log(this.state.isIconDown);
-    if (this.state.isIconDown) {
+    console.log(this.state.toShow);
+    if (this.state.toShow) {
       this.setState({
-        isIconDown: false,
+        toShow: false,
       });
     } else {
       this.setState({
-        isIconDown: true,
+        toShow: true,
       });
     }
   };
@@ -25,7 +25,7 @@ class App extends React.Component {
         <Expand
           title='Some text'
           onChangeState={this.onChangeState}
-          isIconDown={this.state.isIconDown}
+          toShow={this.state.toShow}
         >
           <p>
             Hooks are a new addition in React 16.8. They let you use state and

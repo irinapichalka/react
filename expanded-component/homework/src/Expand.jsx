@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Expand = ({ children, title, onChangeState, isIconDown }) => {
-  const classForIcon = isIconDown ? 'fa-chevron-down' : 'fa-chevron-up';
+const Expand = ({ children, title, onChangeState, toShow }) => {
+  const classForIcon = toShow ? 'fa-chevron-up' : 'fa-chevron-down';
   return (
     <div className='expand border'>
       <div className='expand__header'>
@@ -13,7 +13,7 @@ const Expand = ({ children, title, onChangeState, isIconDown }) => {
       </div>
       <div
         className='expand__content'
-        style={{ display: isIconDown ? 'none' : 'block' }}
+        style={{ display: toShow ? 'block' : 'none' }}
       >
         {children}
       </div>
