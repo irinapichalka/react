@@ -19,6 +19,8 @@ class ShoppingCart extends React.Component {
   };
   render() {
     const count = this.state.cartItems.length;
+    console.log(this.props.userData.firstName);
+    console.log(this.state.cartItems);
 
     return (
       <div className='column'>
