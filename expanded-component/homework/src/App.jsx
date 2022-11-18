@@ -6,12 +6,6 @@ class App extends React.Component {
     isIconDown: true,
   };
 
-  hideContent = () => {
-    this.setState({
-      isIconDown: true,
-    });
-  };
-
   onChangeState = () => {
     console.log(this.state.isIconDown);
     if (this.state.isIconDown) {
