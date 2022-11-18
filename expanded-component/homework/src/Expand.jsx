@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Expand = ({ children, title, changeContent, isIconDown }) => {
+const Expand = ({ children, title, onChangeState, isIconDown }) => {
   const classForIcon = isIconDown ? 'fa-chevron-down' : 'fa-chevron-up';
   return (
     <div className='expand border'>

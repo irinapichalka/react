@@ -13,6 +13,7 @@ class App extends React.Component {
   };
 
   onChangeState = () => {
+    console.log(this.state.isIconDown);
     if (this.state.isIconDown) {
       this.setState({
         isIconDown: false,
@@ -29,7 +30,7 @@ class App extends React.Component {
       <div className='app'>
         <Expand
           title='Some text'
-          changeContent={this.onChangeState}
+          onChangeState={this.onChangeState}
           isIconDown={this.state.isIconDown}
         >
           <p>
