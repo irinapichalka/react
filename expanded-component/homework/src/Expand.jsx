@@ -7,21 +7,21 @@ class Expand extends React.Component {
   };
 
   onChangeState = () => {
-    if (this.state.toShow) {
-      this.setState({
-        toShow: false,
-      });
-    } else {
-      this.setState({
-        toShow: true,
-      });
-    }
+    this.setState({
+      toShow: !this.state.toShow,
+    });
   };
   render() {
     const classForIcon = this.state.toShow
       ? 'fa-chevron-up'
       : 'fa-chevron-down';
+
     const { title, children } = this.props;
+    const content = this.state.toShow ? (
+      <div className='expand__content'>{children}</div>
+    ) : (
+      ''
+    );
 
     return (
       <div className='expand border'>
@@ -31,12 +31,7 @@ class Expand extends React.Component {
             <i className={`fas ${classForIcon}`}></i>
           </button>
         </div>
-        <div
-          className='expand__content'
-          style={{ display: this.state.toShow ? 'block' : 'none' }}
-        >
-          {children}
-        </div>
+        {content}
       </div>
     );
   }
