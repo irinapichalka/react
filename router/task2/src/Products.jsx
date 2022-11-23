@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Switch, useParams } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import Product from './Product';
 
 function Products({ match }) {
@@ -18,9 +18,7 @@ function Products({ match }) {
         <Route exact path={match.url}>
           <span>Select a product please</span>
         </Route>
-        <Route path={`${match.url}/:productId`}>
-          <Product />
-        </Route>
+        <Route path={`${match.url}/:productId`} component={Product} />
       </Switch>
     </div>
   );
