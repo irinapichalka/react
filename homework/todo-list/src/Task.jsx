@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
 const Task = ({ id, done, text, onChange, onDelete }) => {
   const listItemClasses = classNames('list-item', { 'list-item_done': done });
@@ -19,6 +20,19 @@ const Task = ({ id, done, text, onChange, onDelete }) => {
       ></button>
     </li>
   );
+};
+
+Task.propTypes = {
+  id: PropTypes.number.isRequired,
+  done: PropTypes.bool,
+  text: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
+
+Task.defaultProps = {
+  text: 'my new task',
+  done: false,
 };
 
 export default Task;
