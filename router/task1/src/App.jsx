@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import Products from './Products';
 import Contacts from './Contacts';
+import PageNotFound from './PageNotFound';
 
 const App = () => {
   return (
@@ -17,6 +18,9 @@ const App = () => {
           </Route>
           <Route path='/contacts'>
             <Contacts />
+          </Route>
+          <Route path='*'>
+            <PageNotFound />
           </Route>
         </Switch>
       </BrowserRouter>
